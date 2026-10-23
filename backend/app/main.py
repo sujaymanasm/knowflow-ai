@@ -141,6 +141,15 @@ app.add_middleware(
 # API Router
 app.include_router(api_router, prefix=settings.API_V1_STR)
 
+@app.get("/")
+async def root():
+    return {
+        "service": settings.PROJECT_NAME,
+        "status": "online",
+        "docs": "/docs",
+        "health": f"{settings.API_V1_STR}/health"
+    }
+
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     return JSONResponse(
