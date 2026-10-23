@@ -1,0 +1,13 @@
+Deep Learning System Design and Serving Architectures
+
+1. Microservice Decoupling
+Modern AI applications decouple text extraction, vector embedding generation, vector indexing, and generative inference into independent, horizontally scalable workers.
+
+2. Ingestion Bottlenecks and Asynchronous Workers
+Document parsing (especially OCR over scanned raster PDFs) is compute and I/O intensive. Decoupling upload ingestion into background job queues prevents thread exhaustion in FastAPI ASGI event loops.
+
+3. Context Window Budgeting and Prompt Injection Defenses
+When injecting retrieved passages into LLM prompts, input boundaries must be strictly delimited with XML or markdown containers (e.g., <retrieved_documents>). System prompts instruct the model to treat retrieved contents purely as passive reference data, neutralizing indirect prompt injection attacks embedded inside malicious documents.
+
+4. Multi-Tenant Workspace Isolation
+Enterprise compliance mandates strict tenant workspace barriers. Every vector search query enforces hard metadata filters (workspace_id == target_workspace_id), guaranteeing zero cross-tenant vector leakage.

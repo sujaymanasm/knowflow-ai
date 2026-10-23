@@ -1,0 +1,30 @@
+[
+  {
+    "id": "eval-1",
+    "question": "What is the primary architectural principle of RAG systems?",
+    "expected_document": "RAG System Architecture & Evaluation Guide",
+    "expected_keywords": ["retrieval", "vector", "language models"],
+    "notes": "Validates core conceptual understanding of RAG grounding"
+  },
+  {
+    "id": "eval-2",
+    "question": "How does vector embedding cosine similarity function?",
+    "expected_document": "RAG System Architecture & Evaluation Guide",
+    "expected_keywords": ["cosine", "similarity", "dot product"],
+    "notes": "Tests mathematical and semantic vector scoring validation"
+  },
+  {
+    "id": "eval-3",
+    "question": "What is the role of chunk overlap in text ingestion?",
+    "expected_document": "RAG System Architecture & Evaluation Guide",
+    "expected_keywords": ["overlap", "fragmentation", "boundaries"],
+    "notes": "Verifies ingestion pre-processing mechanics"
+  },
+  {
+    "id": "eval-4",
+    "question": "What are the latency considerations in document search?",
+    "expected_document": "RAG System Architecture & Evaluation Guide",
+    "expected_keywords": ["latency", "retrieval", "ms"],
+    "notes": "Evaluates pipeline performance and timing metrics"
+  }
+]
